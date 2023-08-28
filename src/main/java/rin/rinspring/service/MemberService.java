@@ -1,17 +1,22 @@
 package rin.rinspring.service;
 
+import org.springframework.stereotype.Service;
 import rin.rinspring.domain.Member;
 import rin.rinspring.repository.MemberRepository;
 import rin.rinspring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
 
-        //회원가입
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    //회원가입
         public Long join(Member member) {
         //같은이름이 있는 중복회원은 안됨 - 예로 비즈니스로직으로 잡음
         validateDuplicateMember(member); //중복회원검증
