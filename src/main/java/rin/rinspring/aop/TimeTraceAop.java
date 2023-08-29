@@ -6,10 +6,10 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component //스프링빈으로 등록
 @Aspect
 public class TimeTraceAop {
-    @Around("execution(* hello.hellospring..*(..))")
+    @Around("execution(* rin.rinspring..*(..))")//타겟팅 - 패키지 하위에 다 적용하기로 한것.
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
         System.out.println("START: " + joinPoint.toString());

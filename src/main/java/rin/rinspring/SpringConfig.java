@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import rin.rinspring.aop.TimeTraceAop;
 import rin.rinspring.repository.JpaMemberRepository;
 import rin.rinspring.repository.MemberRepository;
 import rin.rinspring.repository.MemoryMemberRepository;
@@ -30,4 +31,9 @@ public class SpringConfig {
 
         return new JpaMemberRepository(em);
     }
+
+   /* @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }*/
 }
