@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import rin.rinspring.domain.Member;
 
 import java.util.List;
-
+//순수자바코드 테스트
 class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
